@@ -1,4 +1,5 @@
-import { Slide } from "./Slide";
+
+import { Slide } from "@/components/Slide";
 import { Search, MessageCircle, Binary, Sparkles, History, MoveUpRight, FileText } from "lucide-react";
 
 export const SlideSearch = ({ active }: { active: boolean }) => {
