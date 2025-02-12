@@ -225,65 +225,67 @@ export const SlideSearch: FC<SlideSearchProps> = ({ active }) => {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes typing {
-          from { width: 0 }
-          to { width: 100% }
-        }
-
-        .animate-typing {
-          overflow: hidden;
-          white-space: nowrap;
-          animation: typing 2s steps(50);
-        }
-
-        .animate-typing-slow {
-          overflow: hidden;
-          white-space: nowrap;
-          animation: typing 3s steps(75);
-        }
-
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-
-        .animate-spin-slow {
-          animation: spin-slow 2s linear infinite;
-        }
-
-        @keyframes slide-up {
-          from { 
-            transform: translateY(20px);
-            opacity: 0;
+      <style>
+        {`
+          @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
           }
-          to { 
-            transform: translateY(0);
-            opacity: 1;
+
+          .animate-typing {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 2s steps(50);
           }
-        }
 
-        .animate-slide-up {
-          animation: slide-up 0.5s ease-out forwards;
-        }
+          .animate-typing-slow {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3s steps(75);
+          }
 
-        @keyframes width-animation {
-          from { width: 0% }
-          to { width: var(--target-width) }
-        }
+          @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
 
-        .animate-width {
-          animation: width-animation 1s ease-out forwards;
-        }
+          .animate-spin-slow {
+            animation: spin-slow 2s linear infinite;
+          }
 
-        .cursor {
-          animation: blink 1s step-start infinite;
-        }
+          @keyframes slide-up {
+            from { 
+              transform: translateY(20px);
+              opacity: 0;
+            }
+            to { 
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
 
-        @keyframes blink {
-          50% { opacity: 0; }
-        }
-      `}</style>
+          .animate-slide-up {
+            animation: slide-up 0.5s ease-out forwards;
+          }
+
+          @keyframes width-animation {
+            from { width: 0% }
+            to { width: var(--target-width) }
+          }
+
+          .animate-width {
+            animation: width-animation 1s ease-out forwards;
+          }
+
+          .cursor {
+            animation: blink 1s step-start infinite;
+          }
+
+          @keyframes blink {
+            50% { opacity: 0; }
+          }
+        `}
+      </style>
     </div>
   );
 };
