@@ -1,10 +1,13 @@
-
 import { Slide } from "@/components/Slide";
 import { Search, MessageCircle, Binary, Sparkles, History, MoveUpRight, FileText } from "lucide-react";
 
 export const SlideSearch = ({ active }: { active: boolean }) => {
   return (
-    <Slide active={active} className="bg-gradient-to-br from-gray-900 to-gray-800">
+    <div
+      className={`fixed inset-0 w-full h-full transition-opacity duration-500 ${
+        active ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+      } bg-gradient-to-br from-gray-900 to-gray-800`}
+    >
       <div className="flex flex-col items-center justify-center h-full text-white">
         <h2
           className="text-3xl font-bold animate-fade-in mb-8"
@@ -14,7 +17,6 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
         </h2>
 
         <div className="relative w-[1200px] h-[800px]">
-          {/* Шаг 1: Пользовательский запрос (0-4 сек) */}
           <div 
             className="absolute top-0 left-1/2 -translate-x-1/2 z-50 animate-fade-in"
             style={{ animationDelay: "0s" }}
@@ -36,7 +38,6 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
             </div>
           </div>
 
-          {/* Шаг 2: Векторный поиск (4-8 сек) */}
           <div 
             className="absolute top-44 left-8 z-40 animate-fade-in"
             style={{ animationDelay: "4s" }}
@@ -72,7 +73,6 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
             </div>
           </div>
 
-          {/* Шаг 3: Поиск по ключевым словам (8-12 сек) */}
           <div 
             className="absolute top-44 left-1/2 -translate-x-1/2 z-30 animate-fade-in"
             style={{ animationDelay: "8s" }}
@@ -108,7 +108,6 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
             </div>
           </div>
 
-          {/* Шаг 4: Поиск в базе данных (12-16 сек) */}
           <div 
             className="absolute top-44 right-8 z-30 animate-fade-in"
             style={{ animationDelay: "12s" }}
@@ -172,7 +171,6 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
             </div>
           </div>
 
-          {/* Шаг 5: Генерация ответа (16-20 сек) */}
           <div 
             className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 animate-fade-in"
             style={{ animationDelay: "16s" }}
@@ -210,7 +208,6 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
             </div>
           </div>
 
-          {/* Финальный шаг: Результат */}
           <div 
             className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 animate-fade-in"
             style={{ animationDelay: "20s" }}
@@ -282,6 +279,6 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
           50% { opacity: 0; }
         }
       </style>
-    </Slide>
+    </div>
   );
 };
