@@ -6,13 +6,13 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
     <Slide active={active} className="bg-gradient-to-br from-gray-900 to-gray-800">
       <div className="flex flex-col items-center justify-center h-full text-white">
         <h2
-          className="text-3xl font-bold animate-fade-in mb-12"
+          className="text-3xl font-bold animate-fade-in mb-8"
           style={{ animationDelay: "0.5s" }}
         >
           Гибридный поиск данных (RAG)
         </h2>
 
-        <div className="relative w-[1000px] h-[700px]">
+        <div className="relative w-[1200px] h-[800px]">
           {/* Шаг 1: Пользовательский запрос (0-4 сек) */}
           <div 
             className="absolute top-0 left-1/2 -translate-x-1/2 z-50 animate-fade-in"
@@ -33,16 +33,16 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
 
           {/* Шаг 2: Параллельная обработка (4-8 сек) */}
           <div 
-            className="absolute top-32 left-8 flex flex-col gap-4 z-40 animate-fade-in"
+            className="absolute top-32 left-8 flex flex-col gap-6 z-40 animate-fade-in"
             style={{ animationDelay: "4s" }}
           >
             {/* Векторный поиск */}
-            <div className="space-y-4 bg-white/5 p-6 rounded-lg w-[320px]">
+            <div className="space-y-3 bg-white/5 p-4 rounded-lg w-[300px]">
               <div className="flex items-center gap-2 text-telegram-primary font-medium">
                 <Binary className="w-5 h-5" />
                 <span>Векторный поиск</span>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-2">
                 {['лекция', 'AI', 'время', 'следующая'].map((word, i) => (
                   <div
                     key={word}
@@ -59,12 +59,12 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
             </div>
 
             {/* Поиск по ключевым словам */}
-            <div className="space-y-4 bg-white/5 p-6 rounded-lg w-[320px]">
+            <div className="space-y-3 bg-white/5 p-4 rounded-lg w-[300px]">
               <div className="flex items-center gap-2 text-green-400 font-medium">
                 <Search className="w-5 h-5" />
                 <span>Ключевые слова</span>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-2">
                 {['следующая', 'лекция', 'AI', 'когда'].map((word, i) => (
                   <div
                     key={word}
@@ -86,7 +86,7 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
             className="absolute top-32 right-8 z-30 animate-fade-in"
             style={{ animationDelay: "8s" }}
           >
-            <div className="relative bg-white/5 p-6 rounded-lg w-[600px]">
+            <div className="relative bg-white/5 p-6 rounded-lg w-[550px]">
               <div className="absolute -top-3 -right-3">
                 <History className="w-6 h-6 text-telegram-primary animate-spin-slow" />
               </div>
@@ -138,11 +138,11 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
 
           {/* Шаг 4: Генерация ответа (12-16 сек) */}
           <div 
-            className="absolute bottom-16 left-1/2 -translate-x-1/2 z-20 animate-fade-in"
+            className="absolute bottom-32 left-1/2 -translate-x-1/2 z-20 animate-fade-in"
             style={{ animationDelay: "12s" }}
           >
             <div className="relative max-w-2xl w-full">
-              <div className="absolute -top-16 left-0 right-0 flex justify-between text-xs text-gray-400">
+              <div className="absolute -top-8 left-0 right-0 flex justify-between text-xs text-gray-400">
                 <div className="flex items-center gap-2">
                   <Binary className="w-4 h-4" />
                   <span>Векторное сходство: 92%</span>
@@ -167,7 +167,7 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
 
           {/* Финальный шаг: Результат (16-20 сек) */}
           <div 
-            className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 animate-fade-in"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-fade-in"
             style={{ animationDelay: "16s" }}
           >
             <div className="flex items-center gap-2 text-sm text-telegram-primary">
