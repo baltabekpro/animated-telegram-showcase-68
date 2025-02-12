@@ -18,6 +18,10 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
             className="absolute top-0 left-1/2 -translate-x-1/2 z-50 animate-fade-in"
             style={{ animationDelay: "0s" }}
           >
+            <div className="flex items-center gap-2 justify-center mb-4 text-sm">
+              <div className="w-3 h-3 rounded-full bg-telegram-primary animate-pulse" />
+              <span>Шаг 1: Обработка запроса пользователя</span>
+            </div>
             <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm w-[500px]">
               <div className="flex items-center gap-3">
                 <MessageCircle className="w-8 h-8 text-telegram-primary" />
@@ -31,12 +35,20 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
             </div>
           </div>
 
-          {/* Шаг 2: Параллельная обработка (4-8 сек) */}
+          {/* Шаг 2: Векторный поиск (4-8 сек) */}
           <div 
-            className="absolute top-32 left-8 flex flex-col gap-6 z-40 animate-fade-in"
+            className="absolute top-44 left-8 z-40 animate-fade-in"
             style={{ animationDelay: "4s" }}
           >
-            {/* Векторный поиск */}
+            <div className="flex items-center gap-2 justify-center mb-4 text-sm">
+              <div className="w-3 h-3 rounded-full bg-telegram-primary" 
+                style={{ 
+                  animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                  animationDelay: '4s'
+                }} 
+              />
+              <span>Шаг 2: Векторный поиск</span>
+            </div>
             <div className="space-y-3 bg-white/5 p-4 rounded-lg w-[300px]">
               <div className="flex items-center gap-2 text-telegram-primary font-medium">
                 <Binary className="w-5 h-5" />
@@ -57,8 +69,22 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
                 ))}
               </div>
             </div>
+          </div>
 
-            {/* Поиск по ключевым словам */}
+          {/* Шаг 3: Поиск по ключевым словам (8-12 сек) */}
+          <div 
+            className="absolute top-44 left-1/2 -translate-x-1/2 z-30 animate-fade-in"
+            style={{ animationDelay: "8s" }}
+          >
+            <div className="flex items-center gap-2 justify-center mb-4 text-sm">
+              <div className="w-3 h-3 rounded-full bg-green-400" 
+                style={{ 
+                  animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                  animationDelay: '8s'
+                }} 
+              />
+              <span>Шаг 3: Поиск по ключевым словам</span>
+            </div>
             <div className="space-y-3 bg-white/5 p-4 rounded-lg w-[300px]">
               <div className="flex items-center gap-2 text-green-400 font-medium">
                 <Search className="w-5 h-5" />
@@ -69,7 +95,7 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
                   <div
                     key={word}
                     className="text-sm px-3 py-2 bg-white/10 rounded animate-slide-up"
-                    style={{ animationDelay: `${4.5 + i * 0.5}s` }}
+                    style={{ animationDelay: `${8.5 + i * 0.5}s` }}
                   >
                     <div className="text-gray-400 mb-1">Слово: "{word}"</div>
                     <div className="text-green-400">
@@ -81,11 +107,20 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
             </div>
           </div>
 
-          {/* Шаг 3: Поиск в базе данных (8-12 сек) */}
+          {/* Шаг 4: Поиск в базе данных (12-16 сек) */}
           <div 
-            className="absolute top-32 right-8 z-30 animate-fade-in"
-            style={{ animationDelay: "8s" }}
+            className="absolute top-44 right-8 z-30 animate-fade-in"
+            style={{ animationDelay: "12s" }}
           >
+            <div className="flex items-center gap-2 justify-center mb-4 text-sm">
+              <div className="w-3 h-3 rounded-full bg-telegram-primary" 
+                style={{ 
+                  animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                  animationDelay: '12s'
+                }} 
+              />
+              <span>Шаг 4: Поиск в базе данных</span>
+            </div>
             <div className="relative bg-white/5 p-6 rounded-lg w-[550px]">
               <div className="absolute -top-3 -right-3">
                 <History className="w-6 h-6 text-telegram-primary animate-spin-slow" />
@@ -103,7 +138,7 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
                       className={`p-4 rounded bg-white/10 animate-slide-up ${
                         i === 0 ? 'border border-telegram-primary' : ''
                       }`}
-                      style={{ animationDelay: `${9 + i * 1}s` }}
+                      style={{ animationDelay: `${12.5 + i * 1}s` }}
                     >
                       <div className="flex items-start justify-between">
                         <div className="flex items-start gap-3">
@@ -123,7 +158,7 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
                               className="h-full bg-telegram-primary rounded-full animate-width"
                               style={{ 
                                 width: `${result.score * 100}%`,
-                                animationDelay: `${9.2 + i * 1}s`
+                                animationDelay: `${12.7 + i * 1}s`
                               }}
                             />
                           </div>
@@ -136,11 +171,20 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
             </div>
           </div>
 
-          {/* Шаг 4: Генерация ответа (12-16 сек) */}
+          {/* Шаг 5: Генерация ответа (16-20 сек) */}
           <div 
-            className="absolute bottom-32 left-1/2 -translate-x-1/2 z-20 animate-fade-in"
-            style={{ animationDelay: "12s" }}
+            className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 animate-fade-in"
+            style={{ animationDelay: "16s" }}
           >
+            <div className="flex items-center gap-2 justify-center mb-4 text-sm">
+              <div className="w-3 h-3 rounded-full bg-telegram-primary" 
+                style={{ 
+                  animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                  animationDelay: '16s'
+                }} 
+              />
+              <span>Шаг 5: Генерация ответа</span>
+            </div>
             <div className="relative max-w-2xl w-full">
               <div className="absolute -top-8 left-0 right-0 flex justify-between text-xs text-gray-400">
                 <div className="flex items-center gap-2">
@@ -165,10 +209,10 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
             </div>
           </div>
 
-          {/* Финальный шаг: Результат (16-20 сек) */}
+          {/* Финальный шаг: Результат */}
           <div 
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-fade-in"
-            style={{ animationDelay: "16s" }}
+            className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 animate-fade-in"
+            style={{ animationDelay: "20s" }}
           >
             <div className="flex items-center gap-2 text-sm text-telegram-primary">
               <MoveUpRight className="w-4 h-4" />
@@ -178,7 +222,7 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
         </div>
       </div>
 
-      <style>{`
+      <style>
         @keyframes typing {
           from { width: 0 }
           to { width: 100% }
@@ -236,7 +280,7 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
         @keyframes blink {
           50% { opacity: 0; }
         }
-      `}</style>
+      </style>
     </Slide>
   );
 };
