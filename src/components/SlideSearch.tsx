@@ -1,7 +1,12 @@
-import { Slide } from "@/components/Slide";
+
+import { type FC } from "react";
 import { Search, MessageCircle, Binary, Sparkles, History, MoveUpRight, FileText } from "lucide-react";
 
-export const SlideSearch = ({ active }: { active: boolean }) => {
+interface SlideSearchProps {
+  active: boolean;
+}
+
+export const SlideSearch: FC<SlideSearchProps> = ({ active }) => {
   return (
     <div
       className={`fixed inset-0 w-full h-full transition-opacity duration-500 ${
@@ -220,7 +225,7 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
         </div>
       </div>
 
-      <style>
+      <style jsx>{`
         @keyframes typing {
           from { width: 0 }
           to { width: 100% }
@@ -278,7 +283,7 @@ export const SlideSearch = ({ active }: { active: boolean }) => {
         @keyframes blink {
           50% { opacity: 0; }
         }
-      </style>
+      `}</style>
     </div>
   );
 };
