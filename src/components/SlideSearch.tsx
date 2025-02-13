@@ -1,4 +1,3 @@
-
 import { type FC } from "react";
 import { Search, MessageCircle, Binary, Sparkles, History, MoveUpRight, FileText } from "lucide-react";
 
@@ -79,7 +78,7 @@ export const SlideSearch: FC<SlideSearchProps> = ({ active }) => {
           </div>
 
           <div 
-            className="absolute top-44 left-1/2 -translate-x-1/2 z-30 animate-fade-in"
+            className="absolute top-44 left-[350px] z-30 animate-fade-in"
             style={{ animationDelay: "8s" }}
           >
             <div className="flex items-center gap-2 justify-center mb-4 text-sm">
@@ -114,7 +113,7 @@ export const SlideSearch: FC<SlideSearchProps> = ({ active }) => {
           </div>
 
           <div 
-            className="absolute top-44 right-8 z-30 animate-fade-in"
+            className="absolute top-44 right-4 z-30 animate-fade-in"
             style={{ animationDelay: "12s" }}
           >
             <div className="flex items-center gap-2 justify-center mb-4 text-sm">
@@ -177,7 +176,7 @@ export const SlideSearch: FC<SlideSearchProps> = ({ active }) => {
           </div>
 
           <div 
-            className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 animate-fade-in"
+            className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 animate-fade-in w-[900px]"
             style={{ animationDelay: "16s" }}
           >
             <div className="flex items-center gap-2 justify-center mb-4 text-sm">
@@ -189,7 +188,7 @@ export const SlideSearch: FC<SlideSearchProps> = ({ active }) => {
               />
               <span>Шаг 5: Генерация ответа</span>
             </div>
-            <div className="relative max-w-2xl w-full">
+            <div className="relative w-full">
               <div className="absolute -top-8 left-0 right-0 flex justify-between text-xs text-gray-400">
                 <div className="flex items-center gap-2">
                   <Binary className="w-4 h-4" />
@@ -201,8 +200,8 @@ export const SlideSearch: FC<SlideSearchProps> = ({ active }) => {
                 </div>
               </div>
 
-              <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
-                <div className="flex items-center gap-3 mb-4">
+              <div className="bg-white/10 rounded-2xl p-4 backdrop-blur-sm">
+                <div className="flex items-center gap-3 mb-3">
                   <Sparkles className="w-6 h-6 text-telegram-primary" />
                   <span className="text-lg font-medium">Генерация ответа</span>
                 </div>
