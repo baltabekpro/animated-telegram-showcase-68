@@ -176,7 +176,7 @@ export const SlideSearch: FC<SlideSearchProps> = ({ active }) => {
           </div>
 
           <div 
-            className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 animate-fade-in w-[900px]"
+            className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 animate-fade-in w-[900px]"
             style={{ animationDelay: "16s" }}
           >
             <div className="flex items-center gap-2 justify-center mb-4 text-sm">
