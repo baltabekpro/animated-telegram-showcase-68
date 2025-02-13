@@ -2,15 +2,15 @@
 import { Slide } from "./Slide";
 import { Database } from "lucide-react";
 
-// Типы данных для визуализации
+// Типы данных для визуализации (сократим для улучшения отображения)
 const DATA_TYPES = [
-  { type: "text", color: "rgb(74, 222, 128)", examples: ["Лекция", "Семинар"] },
-  { type: "datetime", color: "rgb(96, 165, 250)", examples: ["14:30", "2024-03-15"] },
+  { type: "text", color: "rgb(74, 222, 128)", examples: ["Лекция"] },
+  { type: "datetime", color: "rgb(96, 165, 250)", examples: ["14:30"] },
   { type: "vector", color: "rgb(192, 132, 252)", examples: ["[0.23, 0.45, 0.89]"] },
-  { type: "category", color: "rgb(251, 146, 60)", examples: ["Расписание", "Новости"] }
+  { type: "category", color: "rgb(251, 146, 60)", examples: ["Расписание"] }
 ];
 
-// Примеры данных
+// Сократим примеры данных до 3 записей
 const EXAMPLE_DATA = [
   {
     id: "1",
@@ -29,25 +29,13 @@ const EXAMPLE_DATA = [
     content: "Семинар по Big Data",
     metadata: { type: "schedule", time: "16:00" },
     vector: [0.56, 0.67, 0.23]
-  },
-  {
-    id: "4",
-    content: "День открытых дверей",
-    metadata: { type: "event", date: "2024-04-01" },
-    vector: [0.91, 0.33, 0.45]
-  },
-  {
-    id: "5",
-    content: "Защита дипломов",
-    metadata: { type: "schedule", time: "10:00" },
-    vector: [0.44, 0.88, 0.12]
   }
 ];
 
 export const SlideStorage = ({ active }: { active: boolean }) => {
   return (
     <Slide active={active} className="bg-gradient-to-br from-gray-900 to-gray-800">
-      <div className="flex flex-col items-center justify-center h-full text-white space-y-8">
+      <div className="flex flex-col items-center justify-center h-screen overflow-hidden text-white space-y-6">
         <h2
           className="text-3xl font-bold animate-fade-in"
           style={{ animationDelay: "0.5s" }}
@@ -55,7 +43,7 @@ export const SlideStorage = ({ active }: { active: boolean }) => {
           Хранение данных
         </h2>
 
-        <div className="relative w-[800px] h-[500px]">
+        <div className="relative w-[800px] h-[400px]">
           {/* Матрица на фоне */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 grid grid-cols-16 grid-rows-12 gap-1 p-4 opacity-20">
@@ -73,13 +61,13 @@ export const SlideStorage = ({ active }: { active: boolean }) => {
           </div>
 
           {/* Основная визуализация хранения данных */}
-          <div className="relative h-full flex flex-col items-center justify-center space-y-8">
+          <div className="relative h-full flex flex-col items-center justify-center space-y-6">
             {/* Типы данных и их визуализация */}
-            <div className="grid grid-cols-4 gap-6 animate-fade-in" style={{ animationDelay: "1s" }}>
+            <div className="grid grid-cols-4 gap-4 animate-fade-in" style={{ animationDelay: "1s" }}>
               {DATA_TYPES.map((dataType, index) => (
                 <div 
                   key={index}
-                  className="bg-white/5 rounded-lg p-4 backdrop-blur-sm border border-white/10"
+                  className="bg-white/5 rounded-lg p-3 backdrop-blur-sm border border-white/10"
                 >
                   <div className="text-sm font-medium mb-2" style={{ color: dataType.color }}>
                     {dataType.type}
@@ -97,7 +85,7 @@ export const SlideStorage = ({ active }: { active: boolean }) => {
 
             {/* Структура базы данных */}
             <div 
-              className="relative w-full max-w-2xl bg-white/5 rounded-lg p-6 backdrop-blur-sm animate-fade-in overflow-auto max-h-[300px]"
+              className="w-full max-w-2xl bg-white/5 rounded-lg p-4 backdrop-blur-sm animate-fade-in"
               style={{ animationDelay: "2s" }}
             >
               <div className="absolute -top-3 -right-3">
@@ -105,9 +93,9 @@ export const SlideStorage = ({ active }: { active: boolean }) => {
               </div>
 
               {/* Таблица с данными */}
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {/* Заголовки колонок */}
-                <div className="grid grid-cols-4 gap-4 text-sm font-medium text-gray-400 sticky top-0 bg-gray-900/90 p-2 rounded">
+                <div className="grid grid-cols-4 gap-4 text-sm font-medium text-gray-400 p-2 rounded">
                   <div>ID</div>
                   <div>Content</div>
                   <div className="truncate">Metadata</div>
